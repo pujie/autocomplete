@@ -1,0 +1,29 @@
+<html>
+	<head>
+	<link rel='stylesheet' href='../cosmetics.css'  />
+		<script type='text/javascript' src='http://code.jquery.com/jquery-latest.js'></script>
+		<script type='text/javascript' src='../padi.autocomplete.js'></script>
+		<script type='text/javascript'>
+			var suggests = {id:"indonesia",ml:"malaysia",br:"brunei",pl:"philipine",sg:"singapore",th:"thailand"};
+			$(document).ready(function(){
+				$('#padiText').autocomp({
+					data:suggests,
+				});
+				$('#save').click(function(){
+					$('#result').append('<li key="'+$('#padiText').attr('key')+'">'+$('#padiText').val()+'<span class="padiDropDownCloser"> x</span></li>');
+					$('.padiDropDownCloser').bind('click',function(){
+						$(this).parent().hide();
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="nav"><a href="../index.html">Main</a></div>
+		<h1>PadiNET AutoSuggest</h1>
+		<input type='text' id='padiText' />
+		<button id='save'> >> </button>
+		<ul id='result'>
+		</ul>
+	</body>
+</html>
