@@ -67,5 +67,6 @@ $.fn.autocomp = function(options){
 			}
 		}
 	});
+	$(this).parent().find('ul#padiDropDown').remove();
 	$(this).parent().append('<ul id="padiDropDown"></ul>');
 }
