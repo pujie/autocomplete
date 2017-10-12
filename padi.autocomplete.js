@@ -8,6 +8,9 @@ $.fn.autocomp = function(options){
 		data:'',
 		},options);
 	var liSelected;
+	$(this).bind('focus',function(){
+		$(this).select();
+	});
 	$(this).bind('keyup',function(e){
 		thiselement = $(this);
 		code = e.which;
