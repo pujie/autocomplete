@@ -10,7 +10,12 @@
 					data:suggests,
 				});
 				$('#save').click(function(){
-					$('#result').append('<li key="'+$('#padiText').attr('key')+'">'+$('#padiText').val()+'<span class="padiDropDownCloser"> x</span></li>');
+					strItem = '<li key="'+$('#padiText').attr('key')+'">';
+					strItem+=$('#padiText').val();
+					strItem+='<span class="padiDropDownCloser"> x</span>';
+					strItem+='</li>';
+					$('#result')
+					.append(strItem);
 					$('.padiDropDownCloser').bind('click',function(){
 						$(this).parent().hide();
 					});

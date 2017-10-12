@@ -15,7 +15,9 @@ $.fn.autocomp = function(options){
 			thiselement.parent().find('ul#padiDropDown').empty();
 			$.each(settings.data,function(key,val){
 				if(val.indexOf(thiselement.val())>=0){
-					thiselement.parent().find('ul#padiDropDown').append('<li key='+key+' class="padiLiSuggestion">'+val+'</li>');
+					thiselement.parent()
+					.find('ul#padiDropDown')
+					.append('<li key='+key+' class="padiLiSuggestion">'+val+'</li>');
 					$('.padiLiSuggestion').bind('mouseover',function(){
 						$(this).addClass('selected');
 					});
